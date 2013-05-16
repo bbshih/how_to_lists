@@ -1,0 +1,8 @@
+<h2>New Guide</h2>
+<%= form_for(@guide) do |f| %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <%= f.submit %>
+<% end %>
