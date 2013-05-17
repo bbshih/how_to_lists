@@ -13,7 +13,7 @@ class GuidesController < ApplicationController
       redirect_to @guide
     else
       flash[:alert] = "Guide has not been created"
-      redirect_to :new
+      render :action => "new"
     end
   end
 

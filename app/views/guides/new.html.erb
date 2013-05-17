@@ -1,5 +1,6 @@
 <h2>New Guide</h2>
 <%= form_for(@guide) do |f| %>
+  <%= f.error_messages %>
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
