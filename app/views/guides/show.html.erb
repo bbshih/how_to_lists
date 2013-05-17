@@ -1,3 +1,4 @@
 <%= @guide.name %>
 <%= link_to "Edit Guide", edit_guide_path(@guide) %>
+<%= link_to "Delete Guide", guide_path(@guide), :method => :delete, :confirm => "Are you sure you want to dleete this project?" %>
 <%= link_to :root, "Go Home" %>

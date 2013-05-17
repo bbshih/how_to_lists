@@ -39,6 +39,13 @@ class GuidesController < ApplicationController
     end
   end
 
+  def destroy
+    @guide = Guide.find(params[:id])
+    @guide.destroy
+    flash[:notice] = 'Guide has been deleted.'
+    redirect_to guides_path
+  end
+
   private
   def find_guide
     @guide = Guide.find(params[:id])
