@@ -1,7 +1,9 @@
 HowToLists::Application.routes.draw do
   root :to => "guides#index"
 
-  resources :guides
+  resources :guides do
+    resources :actions
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

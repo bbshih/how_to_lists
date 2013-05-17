@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130516232021) do
+ActiveRecord::Schema.define(:version => 20130517054305) do
+
+  create_table "actions", :force => true do |t|
+    t.text     "description"
+    t.integer  "guide_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "actions", ["guide_id"], :name => "index_actions_on_guide_id"
 
   create_table "guides", :force => true do |t|
     t.string   "name"
