@@ -1,5 +1,6 @@
 class GuidesController < ApplicationController
   def index
+    @guides = Guide.all
   end
 
   def new
