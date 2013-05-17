@@ -30,9 +30,13 @@ class GuidesController < ApplicationController
 
   def update
     @guide = Guide.find(params[:id])
-    @guide.update_attributes(params[:guide])
-    flash[:notice] = "Guide has been updated."
-    redirect_to @guide
+    if @guide.update_attributes(params[:guide])
+      flash[:notice] = "Guide has been updated."
+      redirect_to @guide
+    else
+      flash[:alert] = "Guide has not been updated."
+      render :action => "edit"
+    end
   end
 
   private
